@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Message } from "./message";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [count, setCount] = useState(0);
+    const [isDay, setIsDay] = useState(true);
+
+    return (
+        <div className={`box ${isDay ? "yellow" : ""}`}>
+            <h1>Day time = {isDay ? "Morning" : "Night"}</h1>
+            <Message counter={count} />
+            <br />
+            <button onClick={() => setCount(count + 1)}>Update counter</button>
+            <button onClick={() => setIsDay(!isDay)}>Update Day</button>
+        </div>
+    );
 }
 
 export default App;
