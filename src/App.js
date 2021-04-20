@@ -13,6 +13,7 @@ function App() {
             <br />
             <button onClick={() => setCount(count + 1)}>Update counter</button>
             <button onClick={() => setIsDay(!isDay)}>Update Day</button>
+            <br />
         </div>
     );
 }
